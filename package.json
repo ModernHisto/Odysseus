@@ -1,0 +1,41 @@
+{
+  "name": "zapret-ui",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set NODE_ENV=development && electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "Toshi",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^34.0.1",
+    "electron-builder": "^25.1.8"
+  },
+  "dependencies": {
+    "ps-tree": "^1.2.0",
+    "sudo-prompt": "^9.2.1"
+  },
+  "build": {
+    "appId": "com.example.zapret-ui",
+    "productName": "Zapret UI",
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico",
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "extraResources": [
+      {
+        "from": "zapret-discord-youtube",
+        "to": "zapret-discord-youtube"
+      }
+    ]
+  }
+}
